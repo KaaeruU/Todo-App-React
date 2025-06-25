@@ -2,7 +2,7 @@ import { useState } from "react";
 import type { TodoItemProps } from "../models/TodoItem";
 
 function OneItem({ text, id, delete: deleteTodo }: TodoItemProps) {
-  const [done, setDone] = useState(false);
+  const [done] = useState(false);
 
   return (
     <div className="flex items-center justify-between bg-white rounded shadow p-4 mb-2">
@@ -13,18 +13,18 @@ function OneItem({ text, id, delete: deleteTodo }: TodoItemProps) {
       >
         {id} - {text}
       </label>
-      <div className="flex gap-2">
+      <div className="flex gap-10">
         <button
           onClick={() => {
-            setDone(!done);
+            // setDone(!done);
           }}
           className={
             done
-              ? "px-3 py-1 bg-gray-500 text-white rounded"
-              : "px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600 transition "
+              ? "px-30 py-10 bg-gray-500 text-white rounded"
+              : "px-2 py-1 bg-green-500 text-white rounded hover:bg-green-600 transition "
           }
         >
-          Done
+          {text}+{`${new Date()}`}
         </button>
         <button
           onClick={() => {
