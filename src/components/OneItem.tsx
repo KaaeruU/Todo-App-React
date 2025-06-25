@@ -13,10 +13,11 @@ function OneItem({ text, id, delete: deleteTodo }: TodoItemProps) {
       >
         {id} - {text}
       </label>
-      <div className="flex gap-2">
+      <div className="flex gap-10">
         <button
           onClick={() => {
             setDone(!done);
+            // setDone(!done);
             console.log("done", done);
           }}
           className={
