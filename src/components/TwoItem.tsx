@@ -1,7 +1,7 @@
 import { useState } from "react";
 import type { TodoItemProps } from "../models/TodoItem";
 
-function OneItem({ text, id, delete: deleteTodo }: TodoItemProps) {
+function TwoItem({ text, id, delete: deleteTodo }: TodoItemProps) {
   const [done, setDone] = useState(false);
 
   return (
@@ -17,21 +17,20 @@ function OneItem({ text, id, delete: deleteTodo }: TodoItemProps) {
         <button
           onClick={() => {
             setDone(!done);
-            console.log("done", done);
           }}
           className={
             done
-              ? "px-3 py-1"
+              ? "px-3 py-1 bg-gray-500 text-white rounded"
               : "px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600 transition "
           }
         >
-          DONISSIMO
+          Done
         </button>
         <button
           onClick={() => {
             deleteTodo(id);
           }}
-          className="px-3 py-1 hover:bg-red-600 transition"
+          className="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600 transition"
         >
           Delete
         </button>
@@ -40,4 +39,4 @@ function OneItem({ text, id, delete: deleteTodo }: TodoItemProps) {
   );
 }
 
-export default OneItem;
+export default TwoItem;
